@@ -1,9 +1,10 @@
 const express = require("express");
+const userController = require("./modules/users/controller");
 
 const app = express();
 
-// Body'den JSON okuyabilmek için
 app.use(express.json());
 
-module.exports = app;
+app.post("/users", userController.createUser);
 
+module.exports = app;
