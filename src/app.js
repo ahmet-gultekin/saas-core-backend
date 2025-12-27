@@ -5,6 +5,9 @@ const app = express();
 
 app.use(express.json());
 
-app.post("/users", userController.createUser);
+const userRoutes = require("./modules/users/routes");
+
+app.use("/users", userRoutes);
+
 
 module.exports = app;
